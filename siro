@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# coding: utf-8
+
+require 'r-fxxk'
+
+class Siro < Brainfuck
+    nxt 'こいつはひでえや！'
+    inc '🐬'
+    prv 'なんて日だ！'
+    dec 'おほー！'
+    opn 'おしり！'
+    cls 'いつものー！'
+    put 'いいねいいねぇ！'
+    get 'AKMだ！'
+end
+
+puts Siro.new.fuck(ARGF.read)
