@@ -1,7 +1,22 @@
-// Learn more about F# at http://fsharp.org
-open System
+module Siro
 
-[<EntryPoint>]
-let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code
+let convertTable =
+    Map [ ">", "こいつはひでえや！"
+          "<", "なんて日だ！"
+          "+", "🐬"
+          "-", "おほー！"
+          ".", "いいねいいねぇ！"
+          ",", "AKMだ！"
+          "[", "おしり！"
+          "]", "いつものー！" ]
+
+let convert (code : string) =
+    let token = [ ">"; "<"; "+"; "-"; "."; ","; "["; "]" ]
+
+    let rec loop (code : string) token =
+        match token with
+        | [] -> code
+        | key :: token ->
+            let c = code.Replace(convertTable.[key], key)
+            loop c token
+    loop code token
